@@ -407,7 +407,6 @@ if __name__ == '__main__':
 
         # Probably not the best way to do this,
         # but it's fast enough that I don't care.
-        study_parameters['num_studies'] = 5
         with Pool(50) as p:
             overall_results = p.starmap(run_trial, [(i, dill.dumps(study_parameters, recurse=True)) for i in range(study_parameters['num_studies'])])
 
